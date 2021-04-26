@@ -28,12 +28,11 @@
 					<li <%=welcomeClass%>><a class="navbar-brand" href="<%= WELCOME_PAGE_URL %>">Home</a></li>
 					<li <%=productsClass%>><a class="navbar-brand" href="<%= PRODUCTS_PAGE_URL %>">상품 목록</a></li>
 					<%	
-						if(isAdmin) {
-					%>	
-						<li <%=productsClass%>><a class="navbar-brand" href="<%= PRODUCTS_PAGE_URL %>">상품 목록</a></li>
-					<% 
+						if(isAdmin) {%>
+						<li <%=productsClass%>><a class="navbar-brand" href="<%= PRODUCT_ADD_PAGE_URL %>">상품 등록</a></li>
+					<%	
 						}
-					%>
+			     	%>
 					
 					<li><a class="navbar-brand" href="#">메뉴3</a></li>
 				</ul>
@@ -41,6 +40,7 @@
 		</div>
 	</nav>
 	
+				
 	
 	
 	

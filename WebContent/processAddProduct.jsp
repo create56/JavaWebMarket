@@ -1,3 +1,6 @@
+<%@page import="java.util.Enumeration"%>
+<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
+<%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@page import="exception.DuplicateProductException"%>
 <%@page import="java.util.Calendar"%>
 <%@page import="DAO.ProductRepository"%>
@@ -9,18 +12,32 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 
-	String productId = request.getParameter("productId");
-	String name = request.getParameter("name");
-	String unitPrice = request.getParameter("unitPrice");
-	String description = request.getParameter("description");
-	String manufacturer = request.getParameter("manufacturer");
-	String category = request.getParameter("category");
-	String unitsInStock = request.getParameter("unitsInStock");
-	String conditon = request.getParameter("condition");
+	String filename = "";
+	//프로젝트의 절대 경로
+	String realFolder= "D:\\eclipse-workspace3\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\WebMarket (1)";
+	// 업로드될 파일의 최대크기 5MB
+	int maxSize = 10*1024*1024;
+	//인코딩 유형
+	String encType = "UTF-8";
+	
+	MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
+
+	String productId = multi.getParameter("productId");
+	String name = multi.getParameter("name");
+	String unitPrice = multi.getParameter("unitPrice");
+	String description = multi.getParameter("description");
+	String manufacturer = multi.getParameter("manufacturer");
+	String category = multi.getParameter("category");
+	String unitsInStock = multi.getParameter("unitsInStock");
+	String conditon = multi.getParameter("condition");
+	
+	Enumeration files = multi.getFileNames();
+	String fileName = (String) files.nextElement();
+	fileName = multi.getFilesystemName(filename);
 	
 	Product product = new Product(
 						productId, name, unitPrice, description, manufacturer,
-						category, unitsInStock, conditon
+						category, unitsInStock, conditon, fileName
 					);
 	
 	// 상품 정보 저장
@@ -33,7 +50,7 @@
 		response.sendRedirect(PRODUCTS_PAGE_URL);
 	} catch(DuplicateProductException e) {
 		// 상품 코드가 중복됬다면
-		response.sendRedirect(DUPLICATE_PRODUCT_PAGE_URL);
+		response.sendRedirect(DUPLICATE_PRODUST_PAGE_URL);
 	}
 %>
 
