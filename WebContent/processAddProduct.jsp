@@ -14,7 +14,7 @@
 
 	String filename = "";
 	//프로젝트의 절대 경로
-	String realFolder= "D:\\eclipse-workspace3\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\WebMarket (1)";
+	String realFolder= "D:\\eclipse-workspace3\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\WebMarket(1)";
 	// 업로드될 파일의 최대크기 5MB
 	int maxSize = 10*1024*1024;
 	//인코딩 유형
