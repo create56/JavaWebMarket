@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/config.jsp" %>
-< !DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -15,7 +15,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<jsp:include page="header.jsp" />
+	<jsp:include page="header.jsp"/>
 	<div class="jumbotron">
 		<div class="container">
 			<h2 class="alert alert-danger">요청하신 페이지를 찾을수 없습니다.</h2>
@@ -25,6 +25,6 @@
 	<div class="container">
 		<p><a href="<%=PRODUCTS_PAGE_URL %>" class="btn btn-secondary">상품 목록&raquo;</a></p>
 	</div>
-	<jsp:include page="footer.jsp">
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

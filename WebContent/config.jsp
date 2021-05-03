@@ -7,6 +7,9 @@
 	String PRODUCT_PAGE_URL = "/WebMarket/product.jsp?active=products";
 	String PRODUCT_ADD_PROCESS_PAGE_URL = "/WebMarket/processAddProduct.jsp";
 	String DUPLICATE_PRODUST_PAGE_URL ="/WebMarket/error/duplicate.jsp?active=addProduct";
+	String CART_PAGE_URL = "/WebMarket/cart.jsp?active=cart";
+	
+	String ADD_TO_CART_PROCESS_URL = "/WebMarker/cart/add";
 
 	String adminIP = "192.168.2.6";
 %>
