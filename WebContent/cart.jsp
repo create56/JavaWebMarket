@@ -30,7 +30,7 @@
 			<table width="100%">
 				<tr>
 					<td align="left">
-					<a href="/WebMarket/cart/delete" class="btn btn-danger">삭제하기</a>
+					<a href="/WebMarket/cart/delete/all" class="btn btn-danger">삭제하기</a>
 					</td>
 						<td align="right">
 						<a href="/Web/Market/order" class="btn btn-success">주문하기</a>
@@ -91,7 +91,7 @@
 	</div>
 	<jsp:include page="footer.jsp" />
 	
-	<script type="text/javascript">
+	<script>
 		function removeCart(productId) {
 			$.ajax({ // $=jQuery
 				url:"http://192.168.2.6:8081/WebMarket/cart/delete",
