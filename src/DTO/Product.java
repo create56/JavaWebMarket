@@ -22,7 +22,8 @@ public class Product implements Serializable {
 		setUnitPrice(unitPrice);
 	}
 	
-	public Product(String productId, String name, String unitPrice, String description, String manufacturer, String category, String unitsInStock, String condition, String imagePath) {
+	public Product(String productId, String name, String unitPrice, String description, String manufacturer, 
+			String category, String unitsInStock, String condition, String imagePath) {
 		this.productId = productId;
 		this.name = name;
 		this.unitPrice = Integer.parseInt(unitPrice);
@@ -30,6 +31,19 @@ public class Product implements Serializable {
 		this.manufacturer = manufacturer;
 		this.category = category;
 		this.unitsInStock = Integer.parseInt(unitsInStock);
+		this.condition = condition;
+		this.imagePath = imagePath;
+	}
+	
+	public Product(String productId, String name, int unitPrice, String description, String manufacturer, 
+			String category, int unitsInStock, String condition, String imagePath) {
+		this.productId = productId;
+		this.name = name;
+		this.unitPrice =unitPrice;
+		this.description = description;
+		this.manufacturer = manufacturer;
+		this.category = category;
+		this.unitsInStock = unitsInStock;
 		this.condition = condition;
 		this.imagePath = imagePath;
 	}

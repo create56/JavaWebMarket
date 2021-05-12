@@ -32,4 +32,6 @@ function checkAddProduct() {
 		unitsInStock.focus();
 		return false;
 	}
+	
+	document.newProduct.submit();
 }
